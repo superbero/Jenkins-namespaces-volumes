@@ -7,7 +7,7 @@ spec:
     storage: 10Gi
   volumeMode: Filesystem
   hostPath:
-    path:  /home/ubuntu/volumes
+    path:  /Users/admin/volumes
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Recycle
