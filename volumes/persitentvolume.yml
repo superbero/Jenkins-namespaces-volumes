@@ -1,13 +1,30 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: postgres-volumes
+  name: postgres-movie-volumes
 spec:
   capacity:
     storage: 10Gi
   volumeMode: Filesystem
   hostPath:
-    path:  /Users/admin/volumes
+    path:  /Users/admin/volumes/movie/
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: standard
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: postgres-cast-volumes
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  hostPath:
+    path:  /Users/admin/volumes/cast
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Recycle
